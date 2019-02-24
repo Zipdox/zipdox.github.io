@@ -1,5 +1,7 @@
 <html>
 	<head>
+		<meta charset="utf-8">
+	  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Egg Drop Experiment</title>
 		<link rel="icon" href="egg.png">
 		<link rel="stylesheet" href="styles.css">
@@ -8,34 +10,65 @@
 	<body>
 
 		<center id="header">
-			<h1 id="title">Egg Drop Experiment</h1><bt>
-			<h2 id="subtitle">By Alex Wieligna & Julian Gerritsen</h2>
+			<h1>Egg Drop Experiment</h1><bt>
+			<h2>By Alex Wieligna & Julian Gerritsen</h2>
 		</center>
 
-		<div id="front">
-			<img src="front.png" id="front-img">
+		<article id="front">
+			<img src="front.png">
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				Here's the deal. You need to drop an egg from the third floor, and it has to survive. You might think that's easy, just wrap it in a bunch of bubblewrap. But that's not how it goes this time. We had to design something that meats these criteria:
+				<ul>
+				<ul>
+					<li>Use an M size egg.</li>
+					<li>You can't use any filler material like wool, cotton, sponge, balloons, or hairgel.</li>
+					<li>The starting size is a maximum of 12x12x12cm.</li>
+					<li>The egg needs to be inspected within 20 seconds after falling.</li>
+					<li>The egg needs to stay intact without cracks.</li>
+					<li>The same egg needs to be used for each drop.</li>
+					<li>The fall needs to be a free fall, so no bungee cord or other attatchments</li>
+				</ul>
+				<ul>
 			</p>
-		</div>
-	
-		<center>
+		</article>	
+		
+		<article>
+			<h1>Testing Design</h1>
+			<p style="width: 44vw; float: left; padding-right: 1vw;">
+				The shuttle design made from wooden skewers worked really well but the parachute didn't work that great. It does create more than enough drag but we had to add straws to make it stay open and it needed to be thrown unfolded in orded to perform well, thus not meeting the size constraint. It was also prone to collapsing. We decided that we needed a better parachute to meet the criteria.
+			</p>
 			<video controls>
-	  			<source src="wrong.mp4" type="video/mp4">
-	  		</video>
-	  		<video controls>
 	  			<source src="old_parachute.mp4" type="video/mp4">
 	  		</video>
-  		</center>
+		</article>
 
-  		<center>
+		<article>
+			<h1>Improving Design</h1>
+			<p style="width: 44vw; float: left; padding-right: 1vw;">
+				We did some research online on how to fold a parachute and we found along the way that a round parachute with eight strings performs much better than four strings. We also found that putting a hole in the middle of a parachute is done to improve stability and decrease the chance of collapsing.
+				<br><br>
+				So that's what we did. We cut out a circle, cut a hole in the middle and cut a section from one side to create a shallow cone shape. We then attached eight strings with tape and glued them together to one string. 
+			</p>
 			<video controls>
 	  			<source src="new_parachute.mp4" type="video/mp4">
 	  		</video>
-	  		<video controls>
+		</article>
+
+		<article>
+			<h1>Final Test</h1>
+			<p style="width: 44vw; float: left; padding-right: 1vw;">
+				The final design passed the three story drop without a problem. The parachute opened quickly and it glided down smoothly without any oscillations or other problems. I'm really satisfied with the result
+			</p>
+			<video controls>
 	  			<source src="https://dl.dropbox.com/s/kogj9lyfh9eaqdp/3_stories.mp4" type="video/mp4">
 	  		</video>
-  		</center>
+		</article>
+
+		
+			<video controls>
+	  			<source src="wrong.mp4" type="video/mp4">
+	  		</video>
+	  	
 
 	</body>
 </html>

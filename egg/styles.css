@@ -18,24 +18,46 @@ video {
 	margin-bottom: 4vw;
 }
 
+#header h1 {
+	margin: 0;
+	padding: 0;
+	font-size: 4vw;
+}
+
+#header h2 {
+	font-size: 1.8vw;
+	color: gray;
+}
+
 #front {
-	height: 49vw;
+	min-height: 49vw;
 	width: 80vw;
 }
 
-#front-img {
+#front img {
 	height: 35vw;
 	margin: 1vw;
 	float: left;
 }
 
-#title {
-	margin: 0;
-	padding: 0;
-	font-size: 50px;
+article {
+	width: 80vw;
+	display: inline-block;
 }
 
-#subtitle {
-	font-size: 20px;
-	color: gray;
+article h1 {
+	font-size: 30px;
+}
+
+article p {
+	margin: 0;
+}
+
+article ul {
+	list-style-position: inside;
+	list-style-type: none;
+}
+
+article ul ul {
+	list-style-type: initial;
 }
