@@ -45,8 +45,8 @@ article {
 	display: inline-block;
 }
 
-article h1 {
-	font-size: 30px;
+article center h1 {
+	font-size: 35px;
 }
 
 article p {
