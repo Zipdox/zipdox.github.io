@@ -21,11 +21,11 @@ video {
 #header h1 {
 	margin: 0;
 	padding: 0;
-	font-size: 4vw;
+	font-size: 40pt;
 }
 
 #header h2 {
-	font-size: 1.8vw;
+	font-size: 16pt;
 	color: gray;
 }
 
@@ -43,10 +43,11 @@ video {
 article {
 	width: 80vw;
 	display: inline-block;
+	padding-bottom: 16pt;
 }
 
 article center h1 {
-	font-size: 35px;
+	font-size: 30pt;
 }
 
 article p {
