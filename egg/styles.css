@@ -49,11 +49,11 @@ article p {
 	margin: 0;
 }
 
-article ul {
+#frontlist {
 	list-style-position: inside;
 	list-style-type: none;
 }
 
-article ul ul {
+#frontlist ul {
 	list-style-type: initial;
 }
