@@ -29,12 +29,7 @@ video {
 	color: gray;
 }
 
-#front {
-	min-height: 49vw;
-	width: 80vw;
-}
-
-#front img {
+#front-img {
 	height: 35vw;
 	margin: 1vw;
 	float: left;
