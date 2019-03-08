@@ -1,0 +1,42 @@
+<html>
+    <head>
+    	<title>Video</title>
+    	<meta charset="utf-8">
+    </head>
+
+    <style>
+    	html, body {
+    		margin: 0;
+    		background-color: black;
+    	}
+
+    	video {
+    		width: 90vw;
+    	}
+	</style>
+
+    <body>
+    	<center>
+    	<video id="myvideo" poster="select_resolution.png" controls muted preload="auto">
+    		<track label="English" kind="subtitles" srclang="en" src="subs/en.vtt">
+    		<track label="German" kind="subtitles" srclang="de" src="subs/de.vtt">
+    		<track label="Spanish" kind="subtitles" srclang="es" src="subs/es.vtt">
+    		<track label="French" kind="subtitles" srclang="fr" src="subs/fr.vtt">
+    		<track label="Hindi" kind="subtitles" srclang="hi" src="subs/hi.vtt">
+    		<track label="Japanese" kind="subtitles" srclang="ja" src="subs/ja.vtt">
+    		<track label="Korean" kind="subtitles" srclang="ko" src="subs/ko.vtt">
+    		<track label="Russian" kind="subtitles" srclang="ru" src="subs/ru.vtt">
+    		<track label="Brazilian Portuguese" kind="subtitles" srclang="pt-BR" src="subs/pt-BR.vtt">
+
+		    <audio id="myaudio" preload="auto">
+		        <source src="https://r1---sn-mn4vg5aa-5hn6.googlevideo.com/videoplayback?hightc=yes&key=yt6&clen=62770655&requiressl=yes&sparams=clen%2Cctier%2Cdur%2Cei%2Cgcr%2Cgir%2Chightc%2Cid%2Cinitcwndbps%2Cip%2Cipbits%2Citag%2Ckeepalive%2Clmt%2Cmime%2Cmm%2Cmn%2Cms%2Cmv%2Cpfa%2Cpl%2Crequiressl%2Csource%2Cexpire&gir=yes&expire=1552085376&lmt=1548106870727566&c=WEB&mt=1552063610&ei=H52CXLr1L8XngAf0sbWoBw&fvip=1&dur=1303.573&pl=29&id=o-ACZC04G90YfcEmzEWtAubQkzHkVp46MFkyuteLrtfh47&initcwndbps=1576250&mv=m&source=youtube&ms=au%2Crdu&mime=audio%2Fmp4&mn=sn-mn4vg5aa-5hn6%2Csn-5hne6nsy&ipbits=0&mm=31%2C29&itag=258&keepalive=yes&gcr=nl&ip=2001%3A984%3A2ed5%3A0%3A2f1%3Af3ff%3Afea9%3A33ed&ctier=A&pfa=5&signature=B31A56EECC20922E63B32FE480D86B78F8F4F487.B66FFFA7477C036B4E206B5733BBD1AF8C7E1B09&ratebypass=yes" type="audio/webm"/>
+		    </audio>
+		</video>
+		<br>
+		<button onclick="changetohd()">HD</button>
+		<button onclick="changeto4k()">4K</button>
+		</center>
+
+		<script src="player.js"></script>
+    </body>
+</html>
