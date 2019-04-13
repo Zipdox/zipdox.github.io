@@ -27,70 +27,10 @@
         <br>
 
         <input id="urlbox" type="text" placeholder="URL">
-        <button onclick="doit();">Download</button>
+        <button id="download">Download</button>
         
+       
+        <script src="scraper.js"></script>
 
-        <script>
-            var urlbox = document.getElementById("urlbox");
-
-            function download(url) {
-                var element = document.createElement('a');
-                element.setAttribute('href', url);
-                element.setAttribute('download', "");
-
-                element.style.display = 'none';
-                document.body.appendChild(element);
-
-                element.click();
-
-                document.body.removeChild(element);
-            }
-            
-
-            function doit(){
-                var xhttp = new XMLHttpRequest()
-                xhttp.responseType = "document";
-
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        // outputfield.appendChild(this.response.getElementsByTagName("html")[0]);
-                        // console.log(this.response.getElementsByTagName("script"));
-                        // outputfield.appendChild(this.response.getElementsByTagName("script")[8]);
-                        var scripts = this.response.getElementsByTagName("script");
-                        for(var i = 0; i < scripts.length; i++) {
-                            if(scripts[i].innerHTML.includes("__INIT_PROPS__")){
-                                console.log(scripts[i]);
-                                var jsonscript = document.createElement("script");
-                                jsonscript.innerHTML = scripts[i].innerHTML.replace("window.__INIT_PROPS__", "var data");
-                                eval(jsonscript.innerHTML)
-                                var downloadurl = data["/share/video/:id"]["videoData"]["itemInfos"]["video"]["urls"][2].replace("watermark=1", "watermark=0");
-                                download(downloadurl);  
-                            }
-                        }
-                    }
-                }
-
-                var link;
-                if (urlbox.value.includes("vm.tiktok")) {
-                    alert("Shortened URL's don't work yet.")
-                } else if (urlbox.value.includes("m.tiktok")) {
-                    link = urlbox.value.replace("m.tiktok", "www.tiktok").replace("/v/", "/share/video/").replace(".html", "");
-                } else if (urlbox.value.includes("www.tiktok")) {
-                    link = urlbox.value;
-                } else {
-                    alert("Please enter a valid URL.")
-                }
-
-
-                if (link.length > 0) {
-                    xhttp.open("GET", link, true);
-                    xhttp.send();
-                }
-                
-            
-            }
-            
-
-        </script>
     </body>
 </html>
