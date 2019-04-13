@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Discord Server Call Link Generator</title>
+		<link rel="icon" href="favicon.ico">
+		<meta name="keywords" content="Discord, tool, generator">
+		<meta name="description" content="Generates a link you can click in discord to view the call screen for things like screen sharing.">
+		<meta name="author" content="Zipdox">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	
+	<body>
+		<h1>Discord Server Call Link Generator</h1>
+		<p>Generates a link you can click in discord to view the call screen for things like screen sharing.</p>
+		<input placeholder="Server ID" type="text" id="serverID">
+		<input placeholder="Channel ID" type="text" id="channelID">
+		<button onclick="generate()">Generate</button>
+		<br>
+		<p id="result"></p>
+	</body>
+
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+	</style>
+
+	<script>
+		document.getElementById("result").style.opacity = 0
+
+		function notifyEffect() {
+		    var fadeTarget = document.getElementById("result");
+		    var fadeEffect = setInterval(function () {
+		        if (fadeTarget.style.opacity > 0) {
+		            fadeTarget.style.opacity -= 0.01;
+		        } else {
+		            clearInterval(fadeEffect);
+		            document.getElementById("result").innerHTML = '';
+		        }
+		    }, 20);
+		}
+
+		function generate() {
+			var serverID = document.getElementById("serverID").value;
+			var channelID = document.getElementById("channelID").value;
+			var link = 'https://discordapp.com/channels/' + serverID + '/' + channelID;
+
+			const copyText = document.createElement('textarea');
+			copyText.value = link;
+			document.body.appendChild(copyText);
+			copyText.select();
+			document.execCommand("copy");
+			document.body.removeChild(copyText);
+
+			document.getElementById("result").innerHTML = 'Copied link to clipboard.';
+			document.getElementById("result").style.opacity = 1;
+			notifyEffect();
+		}
+	</script>
+</html>
