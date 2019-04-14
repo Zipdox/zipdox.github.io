@@ -15,14 +15,23 @@ document.getElementById("download").onclick = function(){
                 if (scripts[i].innerHTML.includes('{"urls":')){
                     eval(scripts[i].innerHTML.replace("window.__INIT_PROPS__", "var data"));
                     var videoLink;
-
                     var script = scripts[i].innerHTML;
                     if (script.includes('{"/v/:id":')){
-                        videoLink = data["/v/:id"]["videoData"]["itemInfos"]["video"]["urls"][2].replace("watermark=1", "watermark=0");
+                        var videourls = data["/v/:id"]["videoData"]["itemInfos"]["video"]["urls"];
+                        if (videourls.length > 1){
+                            videoLink = videourls[2].replace("watermark=1", "watermark=0");
+                        } else {
+                            videoLink = videourls[0];
+                        }
+                        
 
                     } else if (script.includes('{"/share/video/:id"')){
-                        videoLink = data["/share/video/:id"]["videoData"]["itemInfos"]["video"]["urls"][2].replace("watermark=1", "watermark=0");
-
+                        var videourls = data["/share/video/:id"]["videoData"]["itemInfos"]["video"]["urls"];
+                        if (videourls.length > 1){
+                            videoLink = videourls[2].replace("watermark=1", "watermark=0");
+                        } else {
+                            videoLink = videourls[0];
+                        }
                     }
                     window.open(videoLink);
 
@@ -31,8 +40,14 @@ document.getElementById("download").onclick = function(){
                 } else if (scripts[i].innerHTML.includes('{"url_list":')){
                     var execData = scripts[i].innerHTML.replace("$(function(){", "").split("var status = 0;")[0];
                     eval(execData);
-                    var videoLink = data["video"]["play_addr"]["url_list"][2].replace("\\/", "/").replace("//", "http://").replace("\\u0026", "&");
+                    var videourls = data["video"]["play_addr"]["url_list"];
+                    if (videourls.length > 1){
+                        videoLink = videourls[2].replace("\\/", "/").replace("//", "http://").replace("\\u0026", "&");
+                    } else {
+                        videoLink = videourls[0].replace("\\/", "/").replace("//", "http://").replace("\\u0026", "&");
+                    }
                     window.open(videoLink);
+
                     break;
                 }
 
