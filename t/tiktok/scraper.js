@@ -1,3 +1,7 @@
+if (window.location.href.startsWith("https://")) {
+    window.location.href = window.location.href.replace("https://", "http://");
+}
+
 document.getElementById("download").onclick = function(){
 
     var link = document.getElementById("urlbox").value;
