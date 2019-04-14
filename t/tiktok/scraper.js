@@ -1,14 +1,14 @@
-var urlbox = document.getElementById("urlbox");
-
 document.getElementById("download").onclick = function(){
 
-    link = document.getElementById("urlbox").value;
-    var pageRequest = new XMLHttpRequest()
-    pageRequest.responseType = "document";
+    var link = document.getElementById("urlbox").value;
 
-    pageRequest.onreadystatechange = function(){
-        if (this.readyState == 4 && this.status == 200) {
-            var scripts = this.response.getElementsByTagName("script");
+    if (link.includes("tiktok.com")) {
+        var parser = new DOMParser();
+
+
+        $.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent(link) + '&callback=?', function(data){
+            var page = parser.parseFromString(data.contents, 'text/html');
+            var scripts = page.getElementsByTagName("script");
 
             for(var i = 0; i < scripts.length; i++) {
 
@@ -38,18 +38,8 @@ document.getElementById("download").onclick = function(){
 
             }
 
-        }  
-    }
+        });
 
-    
-    
-    if (link.includes("vm.tiktok.com")) {
-        alert("Shortened URL's don't work yet.");
-    } else if (link.includes("tiktok.com")) {
-        pageRequest.open("GET", link, true);
-        pageRequest.setRequestHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.47 Safari/537.36");
-        pageRequest.send();
-        console.log("request sent");
     } else {
         alert("Please enter a valid URL.");
     }
