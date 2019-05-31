@@ -8,6 +8,7 @@ html, body {
 #header {
     display: block;
     width: 100vw;
+    box-sizing: border-box;
     background-color: #303030;
     margin: 0;
 }
@@ -18,9 +19,9 @@ html, body {
 #page {
     display: block;
     width: 100vw;
+    box-sizing: border-box;
     padding: 10px;
     margin: 0;
-    box-sizing: border-box;
     background-color: #1e1e1e;
 }
 #commands {
@@ -30,4 +31,9 @@ html, body {
 #commands tr th, #commands tr td {
     border: 1px solid white;
     padding: 4px;
+}
+#ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
