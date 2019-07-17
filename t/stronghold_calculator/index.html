@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Stronghold Calculator</title>
+        <link rel="icon" href="icon.png">
+        <meta name="keywords" content="minecraft,stronghold,calculator,algebra">
+        <meta name="description" content="Calculate the stronghold location with algebra.">
+        <meta name="author" content="Zipdox">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+    <script src="script.js"></script>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+    <body>
+        <h1>Algebraic Stronghold Calculator</h1>
+        <p>
+            Using this tool you can calculate the location of the stronghold by only throwing an ender eye twice at different positions. For best accuracy, space these positions apart at least 500 blocks.
+            <br><br>
+            To use this tool, press F3 and throw an ender eye, then look axactly at the ender eye without walking. Take the X and Z coordinate and put them into the corresponding boxes. You can find the yaw angle in the facing line: <code>Facing: direction (Towards whatever) (yaw / pitch)</code>.
+            <br><br>
+            Do the same for position 2, at least 500 blocks away, roughly at a right angle from the direction the ender eye flew in.
+        </p>
+        <h3>Position 1</h3>
+        <input type="number" placeholder="X Coordinate" id="x1">
+        <input type="number" placeholder="Z Coordinate" id="z1">
+        <input type="number" placeholder="Yaw Angle" id="yaw1">
+        <h3>Position 2</h3>
+        <input type="number" placeholder="X Coordinate" id="x2">
+        <input type="number" placeholder="Z Coordinate" id="z2">
+        <input type="number" placeholder="Yaw Angle" id="yaw2">
+        <br><br>
+        <button onclick="calculate();">Calculate</button>
+    </body>
+</html>
