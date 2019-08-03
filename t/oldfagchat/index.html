@@ -39,7 +39,7 @@
         var chatBox;
         var username = 'anonymous';
 
-        let socket = new WebSocket("ws://mclink.zipdox.net:8080");
+        let socket = new WebSocket("wss://mclink.zipdox.net:8008");
         socket.onmessage = function(event){
             chatBox.innerHTML += event.data;
             chatBox.scrollTo(0, chatBox.scrollHeight);
