@@ -36,9 +36,27 @@
     </style>
 
     <body>
+        <h1>NOTC Oefeningen</h1>
+        <h3>Index</h3>
+        <ul>
+            <li><a href="#Kyrie">Messe Brève 1. Kyrie</a></li>
+            <li><a href="#Gloria">Messe Brève 2. GLoria</a></li>
+            <li><a href="#Sanctus">Messe Brève 3. Sanctus</a></li>
+            <li><a href="#Benedictus">Messe Brève 4. Benedictus</a></li>
+            <li><a href="#AgnusDei">Messe Brève 5. Agnus Dei</a></li>
+            <li><a href="#Koffielied">Koffielied</a></li>
+            <li><a href="#DansNosObscurites">Dans nos obsurités - J. Berthier</a></li>
+            <li><a href="#CountingMusic">Counting music - C. Lawry</a></li>
+            <li><a href="#Ritmo">Ritmo - D. Davison</a></li>
+            <li><a href="#Abschiedslied">Abschiedslied – J. Brahms</a></li>
+        </ul>
+        <br>
+
+
+
         <h2>Messe Brève - T. Dubois</h2>
 
-        <h3>1. Kyrie</h3>
+        <h3 id="Kyrie">1. Kyrie</h3>
         <label>Tutti</label><br>
         <audio controls src="MesseBreve/Messe Brève - 1. KYRIE - Tutti.mp3"></audio>
         <br>
@@ -52,7 +70,7 @@
         <audio controls src="MesseBreve/Messe Brève - 1. KYRIE - Mannen.mp3"></audio>
         <br>
 
-        <h3>2. Gloria</h3>
+        <h3 id="Gloria">2. Gloria</h3>
         <label>Tutti</label><br>
         <audio controls src="MesseBreve/Messe Brève - 2. GLORIA - Tutti.mp3"></audio>
         <br>
@@ -66,7 +84,7 @@
         <audio controls src="MesseBreve/Messe Brève - 2. GLORIA - Mannen.mp3"></audio>
         <br>
         
-        <h3>3. Sanctus</h3>
+        <h3 id="Sanctus">3. Sanctus</h3>
         <label>Tutti</label><br>
         <audio controls src="MesseBreve/Messe Brève - 3. SANCTUS - Tutti.mp3"></audio>
         <br>
@@ -80,7 +98,7 @@
         <audio controls src="MesseBreve/Messe Brève - 3. SANCTUS - Mannen.mp3"></audio>
         <br>
 
-        <h3>4. Benedictus</h3>
+        <h3 id="Benedictus">4. Benedictus</h3>
         <label>Tutti</label><br>
         <audio controls src="MesseBreve/Messe Brève - 4. BENEDICTUS - Tutti.mp3"></audio>
         <br>
@@ -94,7 +112,7 @@
         <audio controls src="MesseBreve/Messe Brève - 4. BENEDICTUS - Mannen.mp3"></audio>
         <br>
 
-        <h3>5. Agnus Dei</h3>
+        <h3 id="AgnusDei">5. Agnus Dei</h3>
         <label>Tutti</label><br>
         <audio controls src="MesseBreve/Messe Brève - 5. Agnus Dei - Tutti.mp3"></audio>
         <br>
@@ -124,13 +142,13 @@
         <br>
         <br>
 
-        <h2>Koffielied</h2>
-        <label>Zelfde melodie als <a href="#abschiedslied">Abschiedslied</a>.</label><br>
+        <h2 id="Koffielied">Koffielied</h2>
+        <label>Zelfde melodie als <a href="#Abschiedslied">Abschiedslied</a>.</label><br>
         <audio controls src="koffielied.mp3"></audio>
         <br>
         <br>
 
-        <h2>Dans nos obsurités - J. Berthier</h2>
+        <h2 id="DansNosObscurites">Dans nos obsurités - J. Berthier</h2>
         <label>Tutti</label><br>
         <audio controls src="Dans nos obsurites - J. Berthier/tutti.mp3"></audio>
         <br>
@@ -148,7 +166,7 @@
         <br>
         <br>
 
-        <h2>Counting music - C. Lawry</h2>
+        <h2 id="CountingMusic">Counting music - C. Lawry</h2>
         <button onclick="document.getElementById('CountingMusicContainer').src = 'https:\/\/youtube.com/embed/NK5X2aC3euM'; document.getElementById('video-container').removeAttribute('hidden');">Tutti</button>
         <button onclick="document.getElementById('CountingMusicContainer').src = 'https:\/\/youtube.com/embed/cuQAV5tTs-s'; document.getElementById('video-container').removeAttribute('hidden');">Sopraan</button>
         <button onclick="document.getElementById('CountingMusicContainer').src = 'https:\/\/youtube.com/embed/dJZjYr-tGfc'; document.getElementById('video-container').removeAttribute('hidden');">Alt</button>
@@ -162,7 +180,7 @@
         <br>
         <br>
         
-        <h2>Ritmo - D. Davison</h2>
+        <h2 id="Ritmo">Ritmo - D. Davison</h2>
         <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/6Zsvui4-LlA'; document.getElementById('video-container2').removeAttribute('hidden');">Tutti</button>
         <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/fC1s5QcqDPk'; document.getElementById('video-container2').removeAttribute('hidden');">Sopraan 1 (1)</button>
         <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/rC019GLYxBo'; document.getElementById('video-container2').removeAttribute('hidden');">Sopraan 1 (2)</button>
@@ -180,7 +198,7 @@
         <br>
         <br>
 
-        <h2 id="abschiedslied">Abschiedslied – J. Brahms</h2>
+        <h2 id="Abschiedslied">Abschiedslied – J. Brahms</h2>
         <label>Koor</label><br>
         <audio controls src="Abschiedslied/koor.mp3"></audio>
         <br>
