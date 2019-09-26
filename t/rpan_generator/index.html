@@ -1,0 +1,38 @@
+<!doctype HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RPAN link generator</title>
+		<link rel="icon" href="icon.svg">
+		<meta name="keywords" content="rpan,reddit,r/pan,tool,generator">
+		<meta name="description" content="Redirects you to the RPAN media page for a stream.">
+		<meta name="author" content="Zipdox">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	
+	<body>
+			<h1>RPAN link generator</h1>
+			<p>Redirects you to the RPAN media page for a stream.</p>
+			<input placeholder="RPAN link" type="text" id="rpanlink">
+			<button onclick="generate()">Generate</button>
+		
+
+		<style>
+			body {
+				font-family: sans-serif;
+			}
+		</style>
+
+		<script>
+
+
+			function generate() {
+				var rpanlink = document.getElementById("rpanlink").value;
+				var splitlink = rpanlink.split('/');
+				var rpanid = splitlink[splitlink.length - 1];
+				window.open(`https://www.reddit.com/r/pan_media/comments/${rpanid}`);
+			}
+		</script>
+
+	</body>
+</html>
