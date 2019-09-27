@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148893505-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-148893505-1');
+        </script>
+
         <title>NOTC Oefeningen 2019</title>
         <meta charset="utf=8">
     </head>
@@ -46,7 +56,7 @@
             <li><a href="#AgnusDei">Messe Brève 5. Agnus Dei</a></li>
             <li><a href="#Koffielied">Koffielied</a></li>
             <li><a href="#DansNosObscurites">Dans nos obsurités - J. Berthier</a></li>
-            <li><a href="#CountingMusic">Counting music - C. Lawry</a></li>
+            <!-- <li><a href="#CountingMusic">Counting music - C. Lawry</a></li> -->
             <li><a href="#Ritmo">Ritmo - D. Davison</a></li>
             <li><a href="#Abschiedslied">Abschiedslied – J. Brahms</a></li>
         </ul>
@@ -166,7 +176,7 @@
         <br>
         <br>
 
-        <h2 id="CountingMusic">Counting music - C. Lawry</h2>
+        <!-- <h2 id="CountingMusic">Counting music - C. Lawry</h2>
         <button onclick="document.getElementById('CountingMusicContainer').src = 'https:\/\/youtube.com/embed/NK5X2aC3euM'; document.getElementById('video-container').removeAttribute('hidden');">Tutti</button>
         <button onclick="document.getElementById('CountingMusicContainer').src = 'https:\/\/youtube.com/embed/cuQAV5tTs-s'; document.getElementById('video-container').removeAttribute('hidden');">Sopraan</button>
         <button onclick="document.getElementById('CountingMusicContainer').src = 'https:\/\/youtube.com/embed/dJZjYr-tGfc'; document.getElementById('video-container').removeAttribute('hidden');">Alt</button>
@@ -178,19 +188,19 @@
         <br>
         <button onclick="document.getElementById('CountingMusicContainer').src = ''; document.getElementById('video-container').setAttribute('hidden','');">Hide</button>
         <br>
-        <br>
+        <br> -->
         
         <h2 id="Ritmo">Ritmo - D. Davison</h2>
         <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/6Zsvui4-LlA'; document.getElementById('video-container2').removeAttribute('hidden');">Tutti</button>
-        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/fC1s5QcqDPk'; document.getElementById('video-container2').removeAttribute('hidden');">Sopraan 1 (1)</button>
-        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/rC019GLYxBo'; document.getElementById('video-container2').removeAttribute('hidden');">Sopraan 1 (2)</button>
-        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/_U-tP2_bTDQ'; document.getElementById('video-container2').removeAttribute('hidden');">Sopraan 2</button>
-        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/xSSjPvOlPMU'; document.getElementById('video-container2').removeAttribute('hidden');">Alt (1)</button>
-        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/2l5F3Tn8ZDs'; document.getElementById('video-container2').removeAttribute('hidden');">Alt (2)</button>
-        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/mG2DrbRXBxY'; document.getElementById('video-container2').removeAttribute('hidden');">Tenor (1)</button>
-        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/21-Zkwny7C4'; document.getElementById('video-container2').removeAttribute('hidden');">Tenor (2)</button>
-        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/DvX_wTxVc-Q'; document.getElementById('video-container2').removeAttribute('hidden');">Bas (1)</button>
-        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/EpL-_RjBWks'; document.getElementById('video-container2').removeAttribute('hidden');">Bas (2)</button>
+        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/fC1s5QcqDPk'; document.getElementById('video-container2').removeAttribute('hidden');">Sopraan 1 Precussion</button>
+        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/rC019GLYxBo'; document.getElementById('video-container2').removeAttribute('hidden');">Sopraan 1 Zang</button>
+        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/_U-tP2_bTDQ'; document.getElementById('video-container2').removeAttribute('hidden');">Sopraan 2 Precussion</button>
+        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/xSSjPvOlPMU'; document.getElementById('video-container2').removeAttribute('hidden');">Alt Precussion</button>
+        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/2l5F3Tn8ZDs'; document.getElementById('video-container2').removeAttribute('hidden');">Alt Zang</button>
+        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/mG2DrbRXBxY'; document.getElementById('video-container2').removeAttribute('hidden');">Tenor Precussion</button>
+        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/21-Zkwny7C4'; document.getElementById('video-container2').removeAttribute('hidden');">Tenor Zang</button>
+        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/DvX_wTxVc-Q'; document.getElementById('video-container2').removeAttribute('hidden');">Bas Precussion</button>
+        <button onclick="document.getElementById('RitmoContainer').src = 'https:\/\/youtube.com/embed/EpL-_RjBWks'; document.getElementById('video-container2').removeAttribute('hidden');">Bas Zang</button>
         <br>
         <div id="video-container2" hidden class="video-container"><iframe id="RitmoContainer" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <br>
