@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>OldFag Live Chat</title>
+        <!-- <link rel="icon" href="icon.png"> -->
+        <!-- <meta name="keywords" content="">
+        <meta name="description" content=""> -->
+        <meta name="author" content="Zipdox">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+
+    <style>
+        html, body {
+            display: block;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+        }
+        #chat {
+            display: block;
+            overflow: auto;
+            padding: 1%;
+            box-sizing: border-box;
+            background-color: grey;
+            width: 100vw;
+            height: 94vh;
+        }
+
+        #chatInput {
+            display: block;
+            box-sizing: border-box;
+            width: 100vw;
+            height: 6vh;
+        }
+    </style>
+    
+    <script>
+        var chatBox;
+        var username = 'anonymous';
+
+        let socket = new WebSocket("ws://play.zipdox.net:8080");
+        socket.onmessage = function(event){
+            chatBox.innerHTML += event.data;
+            chatBox.scrollTo(0, chatBox.scrollHeight);
+        }
+
+        window.onload = function(){
+            username = prompt('Pick a username', 'anonymous');
+            chatBox = document.getElementById('chat');
+            var chatInput = document.getElementById('chatInput');
+
+            chatInput.addEventListener("keypress", function(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    socket.send(`${username}≫ ${chatInput.value}`);
+                    chatInput.value = '';
+                }
+            });
+        }
+
+        
+
+        
+
+    </script>
+
+    <body>
+
+        <div id="chat"></div>
+
+        <input id="chatInput" type="text">
+    </body>
+</html>
