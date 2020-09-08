@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>
+            Alpha Channel WebM Demo
+        </title>
+    </head>
+    <body>
+        <video loop autoplay src="output.webm" width="400" height="300">
+        </video>
+        <br>
+        <h1>Change Background Color</h1>
+        <br>
+        <input type="color" name="favcolor" onchange="document.body.style.backgroundColor = this.value;">
+        <style>
+            body {
+                background-color: #00ff00;
+                margin: 0;
+            }
+            h1, video, input {
+                text-shadow: 0px 0px 8px white;
+                margin: 8px;
+            }
+        </style>
+    </body>
+    
+
+</html>
