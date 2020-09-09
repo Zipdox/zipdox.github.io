@@ -9,12 +9,13 @@
         </title>
     </head>
     <body>
+        <h1>WebM With an alpha channel</h1>
+        <br>
         <video id="video" loop autoplay src="output.webm" width="400" height="300">
         </video>
         <br>
-        <h1>Change Background Color</h1>
-        <br>
-        <input type="color" name="favcolor" onchange="document.body.style.backgroundColor = this.value;">
+        <label>Change Background Color</label>
+        <input type="color" value="#00ff00" onchange="document.body.style.backgroundColor = this.value;">
         <style>
             body {
                 background-color: #00ff00;
@@ -24,11 +25,15 @@
                 text-shadow: 0px 0px 8px white;
                 margin: 8px;
             }
+            label {
+                margin: 8px;
+                text-shadow: 0px 0px 2px;
+            }
         </style>
         <script>
             document.getElementById('video').onerror = function(){
                 if(navigator.userAgent.includes('Safari')){
-                    alert("Apple has chosen to boycot the WebM standard so companies keep paying them royalties for the H.264 codec.\nUse a competent browser like Firefox or Chromium to see this demo.");
+                    alert("Apple has chosen to boycott the WebM standard to force companies to keep paying them royalties for the inferior H.264 codec.\nUse a competent browser like Firefox or Chromium to see this demo.");
                 }else{
                     alert("There was an error loading the video. You browser likely doesn't support WebM.\nTo see this demo, use a browser that does like Firefox or Chromium.");
                 }
