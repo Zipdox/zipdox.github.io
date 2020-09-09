@@ -9,13 +9,16 @@
         </title>
     </head>
     <body>
-        <h1>WebM With an alpha channel</h1>
+        <h1>WebM with an alpha channel</h1>
         <br>
-        <video id="video" loop autoplay src="output.webm" width="400" height="300">
+        <video id="video" loop autoplay src="output.webm" onclick="randomColor();" title="Click me!" width="400" height="300">
         </video>
         <br>
-        <label>Change Background Color</label>
+        <label>Pick background color</label>
         <input type="color" value="#00ff00" onchange="document.body.style.backgroundColor = this.value;">
+        <!-- <br>
+        <button onclick="startEpilepsy();">Trigger epileptic seizure</button>
+        <button onclick="clearEpilepsy();">Stop epileptic seizure</button> -->
         <style>
             body {
                 background-color: #00ff00;
@@ -31,6 +34,7 @@
             }
         </style>
         <script>
+            var epilepsyInterval;
             document.getElementById('video').onerror = function(){
                 if(navigator.userAgent.includes('Safari')){
                     alert("Apple has chosen to boycott the WebM standard to force companies to keep paying them royalties for the inferior H.264 codec.\nUse a competent browser like Firefox or Chromium to see this demo.");
@@ -39,6 +43,18 @@
                 }
                 
             }
+            function randomColor(){
+                const randomColor = "#"+((1<<24)*Math.random()|0).toString(16);
+                document.body.style.backgroundColor = randomColor;
+            }
+            // function startEpilepsy(){
+            //     epilepsyInterval = setInterval(function(){
+            //         randomColor();
+            //     }, 1000/30);
+            // }
+            // function clearEpilepsy(){
+            //     clearInterval(epilepsyInterval);
+            // }
         </script>
     </body>
     
