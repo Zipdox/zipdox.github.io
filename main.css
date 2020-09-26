@@ -13,6 +13,7 @@ header {
     color: #009999;
     font-family: Arial, Helvetica, sans-serif;
     padding: 1vw;
+    margin: 0;
 }
 
 h2 {
@@ -25,36 +26,32 @@ h3 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+a {
+    color: #009999;
+}
+
 #header {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #2f3136;
+    color: #2f3136;
 }
 
-#header li {
-    float: left;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#header li a {
+#header a {
     display: block;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-#header li a:hover {
-    background-color: gray;
+#header b {
+    color: #2f3136;
 }
 
-table, th, td {
-    color: #009999;
-    border: 1px solid gray;
-    border-collapse: collapse;
-    font-family: Arial;
-    
+#header a:hover {
+    background-color: gray;
 }
 
 th, td {
@@ -65,4 +62,25 @@ th, td {
 ul {
     color: #009999;
     font-family: sans-serif;
+    margin: 0;
+}
+
+.rightheader {
+    float: right;
+}
+
+.leftheader {
+    float: left;
+}
+
+.youtube {
+    background-color: #ff0000;
+}
+
+.twitter {
+    background-color: #1da1f2;
+}
+
+.github {
+    background-color: #ffa300;
 }
