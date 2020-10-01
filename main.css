@@ -39,6 +39,16 @@ a {
     color: #2f3136;
 }
 
+header h1 {
+    margin: 0;
+    padding: 16px;
+    background-image: url('icon.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-origin: padding-box;
+
+}
+
 #header a {
     display: block;
     text-align: center;
