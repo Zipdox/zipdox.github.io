@@ -1,0 +1,28 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: darkslategray;
+    overflow: hidden;
+}
+
+#videoBox {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#mainVideo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#backgroundVideo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
