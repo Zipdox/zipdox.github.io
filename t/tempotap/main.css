@@ -1,0 +1,36 @@
+body {
+    background-color: #36393e;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    color: #009999;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#content {
+    color: #009999;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1vw;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    color: #009999;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: #009999;
+}
+
+#tempoTap {
+    width: 222px;
+    height: 50px;
+}
+
+span {
+    color: white;
+}
