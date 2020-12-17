@@ -27,10 +27,14 @@ a {
 }
 
 #tempoTap {
-    width: 222px;
-    height: 50px;
+    width: 256px;
+    height: 64px;
 }
 
 span {
     color: white;
+}
+
+input {
+    width: 64px;
 }
