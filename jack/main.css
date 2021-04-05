@@ -1,0 +1,18 @@
+article {
+    padding: 2vw;
+    font-family: sans-serif;
+    color: #009999;
+}
+
+.mono {
+    font-family: monospace;
+    font-size: large;
+}
+
+pre {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    font-size: large;
+    padding: 1vw;
+}

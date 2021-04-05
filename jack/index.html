@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JACK Setup for Dummies</title>
+        <meta name="description" content="Zipdox' Website">
+        <link rel="stylesheet" href="/main.css">
+        <link rel="stylesheet" href="main.css">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+        <link rel="icon" href="/icon.png">
+    </head>
+
+    <body>
+
+        <header>
+            <h1><b style="color: #009999">Zipdox</b></h1>
+        </header>
+        
+        <ul id="header">
+            <li class="leftheader"><a href="/"><b style="color: #009999">Home</b></a></li>
+            <li class="leftheader"><a href="/t/"><b style="color: #009999">Tools</b></a></li class="leftheader">
+            <li class="leftheader"><a href="/p/"><b style="color: #009999">Projects</b></a></li>
+            <li class="rightheader youtube"><a href="https://www.youtube.com/channel/UCvg3MSAIZgAf-U0EwSK1vsQ" target="_blank"><b>YouTube</b></a></li>
+            <li class="rightheader twitter"><a href="https://twitter.com/zipdox" target="_blank"><b>Twitter</b></a></li>
+            <li class="rightheader github"><a href="https://github.com/zipdox/" target="_blank"><b>GitHub</b></a></li>
+        </ul>
+        <article>
+            <h1>Setting up Jack Audio Connection Kit for Dummies</h1>
+            This guide is meant to be an easy walkthrough of how to install, configure and use JACK on GNU/Linux. Please read it carefully to not miss any steps.
+
+            <h2>Installing the necesssary packages</h2>
+            To get started, you need to install the following packages:
+            <ul class="mono">
+                <li>jackd2</li>
+                <li>qjackctl</li>
+                <li>pavucontrol</li>
+                <li>pulseaudio-module-jack</li>
+            </ul>
+
+            <h2>System configuration</h2>
+            In order to get the best performance from JACK, you will need to configure your system to allow JACK to run in realtime mode.
+            First of all, you need to add some lines to a config file. Simply copy this command and run it from the command line. It will ask for you password.
+<pre>
+echo "@audio   -  rtprio     95
+@audio   -  memlock    unlimited" | sudo tee -a /etc/security/limits.conf
+</pre>
+            Then you'll need to create an audio user.
+            <pre>sudo groupadd audio</pre>
+            Then you'll need to add your user to it, so run this command with your username.
+            <pre>usermod -a -G audio <bdi style="color: orange;">your_username</bdi></pre>
+            You will need to log out and in again or reboot for the changes to take effect.
+
+            <h2>Releasing audio device</h2>
+            On most distros, audio devices are accessed by pulseaudio by default. You will need to tell pulseaudio to stop using the device so that it can be used by JACK.
+            To do so, follow these simple steps:
+            <ul>
+                <li>Open <i>PulseAudio Volume Control</i></li>
+                <li>Click the <i>Configuration</i> tab</li>
+                <li>Find the device you want to use with JACK</li>
+                <li>Set its <b>Profile</b> to <i>Off</i></li>
+            </ul>
+            PulseAudio should remember the profile if you don't disconnect the audio device, but if you do disconnect it, you may have to do this everytime you wish to use JACK.
+
+            <h2>Configuring QjackCtl</h2>
+            Open up <i>QjackCtl</i> and click <b>Setup</b>. Make sure you are in the <b>Settings</b> tab and under that in the <b>Parameters</b> tab.
+            <br><br>
+            You will be presented with several parameters. I'll quickly guide you though the most important ones.
+            <br><br>
+            The <i>Driver</i> is the backend that JACK uses to talk to hardware. It is almost always just set to alsa.
+            <br><br>
+            The <i>Realtime</i> checkbox makes JACK run in realtime mode, which makes it more reliable and results in less Xruns (over/underruns, audible pops and clicks).
+            <br><br>
+            The <i>Interface</i> option selects what audio device to use. If you want to use separate interfaces for input and output, you can do so under the <b>Advanced</b> tab.
+            <br><br>
+            Leave <i>MIDI Driver</i> set to none if you're not familiar with JACK MIDI yet.
+            <br><br>
+            The <i>Sample Rate</i> is pretty self explanatory. You can set it as higher than your hardware's sample rate and JACK will use resampling, but I recommend you leave it at your hardware's limit. If you don't know what you hardware supports, leave it at 48000.
+            <b></b>
+            <i>Frames/Period</i> and <i>Periods/Buffer</i> define the buffer size that JACK uses. This is the chunk of audio that JACK processes at a time. A smaller buffer size will result in less latency but it can increase the amount of Xruns, so you'll hear more pops and clicks. This should be adjusted to your hardware capabilities and how important clean audio is to your use case. A starting point is 256 Frames/Period at 2 Periods/Buffer.
+            <br><br>
+            In the bottom right corner, you can see the <i>Latency</i> that your choice of buffer size produces.
+
+            <h2>Test if JACK works with VLC</h2>
+            VLC supports playback using JACK. To enable it, under <b>Tools</b> click <b>Preferences</b> and open the <b>Audio</b> settings. Under <b>Output</b> select <i>JACK audio output</i> as the Output module. Close and reopen VLC for it to take effect.
+            <br><br>
+            Now you should be able to play audio with VLC when using JACK.
+
+            <h2>Using PulseAudio with JACK</h2>
+            I wrote a script that starts a bridge between PulseAudio and JACK that you can use applications using PulseAudio while running JACK.
+            <br><br>
+            Click <a href="jackpulse.sh" download="jackpulse.sh">here</a> to download it. Move it to whereever you want, but I recomment you put it in your home folder.
+            <br><br>
+            Rightclick the script and click properties. Under <i>Permissions</i> you will need to enable the <i>Allow execution</i>.
+            <br><br>
+            In the QjackCtl Setup, click the <b>Options</b> tab and enable <b>Execute script after startup</b>. Click the 3 dot button on the right and select the script you downloaded. Click Apply and OK and restart JACK and you should be able to get audio from JACK.
+            <br><br>
+            To verify that the link loaded succesfully, if you click <b>Graph</b> in QjackCtl you should see these 2 boxes:
+            <br>
+            <img src="pulse.png">
+
+            <h2>Autostarting JACK</h2>
+            If you wish to automatically start JACK when you log into your user, here is how to do it.
+            <br><br>
+            Open the QjackCtl setup. Click the <b>Misc</b> tab. Under <b>Other</b> enable <b>Start JACK audio server on application startup</b>.
+            <br><br>
+            Then run this command to add a shortcut for QjackCtl to the autostart folder.
+            <pre>cp /usr/share/applications/qjackctl.desktop ~/.config/autostart/qjackctl.desktop</pre>
+            Now QjackCtl should start automatically when you log in.
+        </article>
+    </body>
+</html>
