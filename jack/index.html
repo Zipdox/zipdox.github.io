@@ -77,7 +77,7 @@ echo "@audio   -  rtprio     95
             Leave <i>MIDI Driver</i> set to none if you're not familiar with JACK MIDI yet.
             <br><br>
             The <i>Sample Rate</i> is pretty self explanatory. You can set it as higher than your hardware's sample rate and JACK will use resampling, but I recommend you leave it at your hardware's limit. If you don't know what you hardware supports, leave it at 48000.
-            <b></b>
+            <br><br>
             <i>Frames/Period</i> and <i>Periods/Buffer</i> define the buffer size that JACK uses. This is the chunk of audio that JACK processes at a time. A smaller buffer size will result in less latency but it can increase the amount of Xruns, so you'll hear more pops and clicks. This should be adjusted to your hardware capabilities and how important clean audio is to your use case. A starting point is 256 Frames/Period at 2 Periods/Buffer.
             <br><br>
             In the bottom right corner, you can see the <i>Latency</i> that your choice of buffer size produces.
