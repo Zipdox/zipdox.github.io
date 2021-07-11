@@ -46,7 +46,7 @@
 echo "@audio   -  rtprio     95
 @audio   -  memlock    unlimited" | sudo tee -a /etc/security/limits.conf
 </pre>
-            Then you'll need to create an audio user.
+            Then you'll need to create an audio user group.
             <pre>sudo groupadd audio</pre>
             Then you'll need to add your user to it, so run this command with your username.
             <pre>sudo usermod -a -G audio <bdi style="color: orange;">your_username</bdi></pre>
